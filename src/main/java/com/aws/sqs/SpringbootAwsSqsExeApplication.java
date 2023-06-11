@@ -32,7 +32,7 @@ public class SpringbootAwsSqsExeApplication {
         queueMessagingTemplate.send(endpoint, MessageBuilder.withPayload(message).build());
     }
 
-    @SqsListener("javatechie-queue")
+    @SqsListener("queueName")
     public void loadMessageFromSQS(String message)  {
         logger.info("message from SQS Queue {}",message);
     }
